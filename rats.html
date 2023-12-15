@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../style/general_style.css">
+	</style>
+	<script>
+		function Calculator() {
+			let P = document.querySelector('#P').value;
+			let D = document.querySelector('#D').value;
+			let S = document.querySelector('#S').value;
+			let L = document.querySelector('#L').value;
+			let C = document.querySelector('#C').value;
+			let R = (P * 2.27 / D) * S * L / C;
+			console.log(R);
+			let ROBJ = document.querySelector('#R');
+			ROBJ.innerHTML = `R=${R} total rats`
+		}
+
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="cell" id="one"><a href="index.html">manscape</a></div>
+		<div class="cell" id="two"><a href="rats.html">Rats</a></div>
+		<div class="cell" id="three"><a href="#">Our Mission</a></div>
+		<div class="cell" id="four"><a href="aboutUs.html">About us</a></div>
+		<div class="cell" id="five"><a href="#">Print us</a></div>
+
+	</div>
+	<img src="rat.png" alt="coolest guy ever"></img>
+	<h2>Rats, Cannibalism, and our Community</h2>
+	<p>In New York City, the common unifier among the rich, the poor, and all other states of being, is the exposure to
+		rats. Also death and taxes. But rats plague our communities, our buildings, and our city. They spread disease, eat
+		our food, and have even killed several cats. One strategy to deal with them would be to do as pirates used to do,
+		specifically by putting a bunch of rats together and having them get hungry and eat each other. These rats get a
+		taste for rat blood and would then hunt down other rats. </p>
+	<h4>Rat Calculator (NYC only)</h4>
+	<p>After an untold amount of research a proper equation to determine rat count near you has been created</p>
+	<p>R=(P*e/D)*S*L/C</p>
+	<ul>
+		<li>R is estimated rat number</li>
+		<li>P is population density per square mile</li>
+		<li>e is eulers constant</li>
+		<li>D is distance in miles from nearest subway</li>
+		<li>S is total square mileage being asked about</li>
+		<li>L is love felt towards rats within area on scale of one(least love) to ten(most love)</li>
+		<li>C is cleanliness within area on scale of one(least clean) to ten(most clean)</li>
+	</ul>
+	<label for="userNumber">Enter P:</label>
+	<input type="number" id="P" required>
+	<label for="userNumber">Enter D:</label>
+	<input type="number" id="D" required>
+	<label for="userNumber">Enter S:</label>
+	<input type="number" id="S" required>
+	<label for="userNumber">Enter L:</label>
+	<input type="number" id="L" required>
+	<label for="userNumber">Enter C:</label>
+	<input type="number" id="C" required>
+	<p id="R">R=?</p>
+	<button type="button" onclick="Calculator()">Submit</button>
+	<div class="footer"><a class="email" href="mailto:surgedile@gmail.com">Contact Us!</a> </div>
+</body>
+
+</html>

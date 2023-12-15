@@ -1,0 +1,69 @@
+.scene {
+	width: 100%;
+	height: 1000px;
+
+	padding-left: 0px;
+	padding-right: 0px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.book {
+	transform-style: preserve-3d;
+	position: relative;
+	transition-duration: 1s;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.page {
+	width: 50%;
+	height: 100%;
+	
+	transition-duration: 1s;
+	transform-style: preserve-3d;
+
+	position: absolute;
+	transform-origin: 0.1% 50%;
+
+	border: none;
+	padding: -1%;
+	margin: none;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page_side {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-weight: bold;
+	font-size: 30px;
+
+	transform-style: preserve-3d;
+	position: absolute;
+	transition-duration: 1s;
+	border: none;
+}
+
+.page_front {
+	z-index: 1;
+}
+
+.page_back {
+	z-index: 0;
+}
