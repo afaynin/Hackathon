@@ -3,47 +3,83 @@
 <html>
 
 <head>
-	<title>Maneater</title>
+  <title>Advocates for Animal Welfare</title>
 
-	<!-- Generic Style -->
-	<link rel="stylesheet" href="style/general_style.css">
+  <!-- Generic Style -->
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style/general_style.css">
+	<link rel="stylesheet" href="style/heading.css">
 
-	<!-- Flipbook Style and Scrpt -->
-	<link rel="stylesheet" href="style/flipbook.css">
-	<script src="script/flipbook.js"></script>
+  <!-- Flipbook Style and Scrpt -->
+  <link rel="stylesheet" href="style/flipbook.css">
+  <script src="script/flipbook.js"></script>
 
-	<!-- Specific Script -->
-	<script>
-		function init() {
-			add_flipbook_to_scene();
-		}
-	</script>
+  <!-- Scroll Events -->
+  <script src="script/scroll_events.js"></script>
 
-	<!-- Merriweather Black -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+  <!-- Specific Script -->
+  <script>
+    function init() {
+      init_key_tracking();
+
+			let sliding_plate = document.querySelector(".sliding_plate");
+			let heading_box = document.querySelector(".heading_box");
+			let heading_text = document.querySelector(".heading_text");
+			sliding_plate.classList.add("sliding");
+			setTimeout(() => {
+				sliding_plate.classList.remove("sliding");
+				void sliding_plate.offsetWidth;
+				sliding_plate.classList.add("sliding");
+				heading_text.innerHTML = "Millions of animals play a part in NYC's vibrant streets.";
+			}, 4000);
+			setTimeout(() => {
+				sliding_plate.classList.remove("sliding");
+				void sliding_plate.offsetWidth;
+				sliding_plate.classList.add("sliding");
+				heading_text.innerHTML = "It's our job to help them however we can.";
+			}, 8000);
+			setTimeout(() => {
+				sliding_plate.classList.remove("sliding");
+				void sliding_plate.offsetWidth;
+				sliding_plate.classList.add("final_slide");
+				sliding_plate.innerHTML = "<div class='scene'></div><div class='tooltip'>Use A and D to Navigate</div>";
+				let book = create_book(450, 600, getBookContent());
+				document.querySelector(".scene").appendChild(book);
+			}, 12000);
+    }
+  </script>
+
+  <!-- Merriweather Black -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
 
 </head>
 
 <body onload="init();">
-	<div class="header">
-		<div class="header_cell" id="header_cell_one"><a href="index.html">Our Mission</a></div>
-		<div class="header_cell" id="header_cell_two"><a href="rats.html">Animal Shelters</a></div>
-		<div class="header_cell" id="header_cell_three"><a href="#">Helping Strays</a></div>
-		<div class="header_cell" id="header_cell_four"><a href="aboutUs.html">Rodents</a></div>
-		<div class="header_cell" id="header_cell_five"><a href="#">About Us</a></div>
+  <div class="header">
+    <div class="header_cell" id="header_cell_one"><a href="index.html">Our Mission</a></div>
+    <div class="header_cell" id="header_cell_two"><a href="shelters.html">Animal Shelters</a></div>
+    <div class="header_cell" id="header_cell_three"><a href="strays.html">Helping Strays</a></div>
+    <div class="header_cell" id="header_cell_four"><a href="rats.html">Rodents</a></div>
+    <div class="header_cell" id="header_cell_five"><a href="aboutUs.html">About Us</a></div>
+  </div>
+
+	<div class="sliding_plate">
+	  <div class="heading_box">
+	    <div class="heading_text">
+	      Our communities are made of more than just people.
+	    </div>
+	    <div class="heading_decoration" id="heading_decoration_one"></div>
+	    <div class="heading_decoration" id="heading_decoration_two"></div>
+	  </div>
 	</div>
-
-	<div class="heading_box">
-		<div class="heading_text">
-			Our communities are made of more than just people.
-		</div>
-		<div class="heading_decoration" id="heading_decoration_one"></div>
-		<div class="heading_decoration" id="heading_decoration_two"></div>
-	</div> 
-
-	<div class="scene">
+	
+  <div class="footer">
+    <div><a href="#">Back to Top</a></div>
+		<div>Contact Us:</div>
+		<div>Email: <a href="mailto:surgedile@gmail.com">surgedile@gmail.com</a></div>
+		<div>Phone: <a href="tel:+13479884657">(347) 988-4657</</a></div>
 	</div>
 </body>
 

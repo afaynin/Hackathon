@@ -2,68 +2,116 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="../style/general_style.css">
-	</style>
-	<script>
-		function Calculator() {
-			let P = document.querySelector('#P').value;
-			let D = document.querySelector('#D').value;
-			let S = document.querySelector('#S').value;
-			let L = document.querySelector('#L').value;
-			let C = document.querySelector('#C').value;
-			let R = (P * 2.27 / D) * S * L / C;
-			console.log(R);
-			let ROBJ = document.querySelector('#R');
-			ROBJ.innerHTML = `R=${R} total rats`
-		}
+	<title>Advocates for Animal Welfare</title>
+  <meta charset="UTF-8">
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/general_style.css">
+    <link rel="stylesheet" href="../style/rats.css">
+  </style>
+  <script>
+    function Calculator() {
+      let P = Math.ceil(document.querySelector('#P').value);
+      let D = Math.ceil(document.querySelector('#D').value);
+      let S = Math.ceil(document.querySelector('#S').value);
+      let L = Math.ceil(document.querySelector('#L').value);
+      let C = Math.ceil(document.querySelector('#C').value);
+      let R = Math.ceil((((P * Math.E * 69) + 420)/ D) * S * L / C); 
+      //planktons constant is pretty funny
+    
+      
+      //console.log(R); are there any other funny numbers?
+      let ROBJ = document.querySelector('#R');
+      ROBJ.innerHTML = `R=${R} total rats`
+    }
+    // function numbCheck(letter) {
+      
+    //   //Finish this later
+    //   let input = document.getElementById(letter);
+    //   let value = input.value;
+    //   if (letter == 'S' || letter == 'L'|| letter == 'C'){
+    //   if (isNaN(value) || value < 1 || value > 10) {
+    //     alert('Please enter a number between 1 and 10.');
+    //     input.value = ''; // Clear the input
+    //   }
+    // }
+    //   else{
+    //     if (isNaN(value) || value < 1 || value > 100000) {
+    //       alert('Please enter a number between 1 and 100000.');
+    //       input.value = ''; // Clear the input
+    //     }
+    //   }
+    // }
 
-	</script>
+  </script>
+
+	<!-- Merriweather Black -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<div class="header">
-		<div class="cell" id="one"><a href="index.html">manscape</a></div>
-		<div class="cell" id="two"><a href="rats.html">Rats</a></div>
-		<div class="cell" id="three"><a href="#">Our Mission</a></div>
-		<div class="cell" id="four"><a href="aboutUs.html">About us</a></div>
-		<div class="cell" id="five"><a href="#">Print us</a></div>
-
+		<div class="header_cell" id="header_cell_one"><a href="index.html">Our Mission</a></div>
+		<div class="header_cell" id="header_cell_two"><a href="shelters.html">Animal Shelters</a></div>
+		<div class="header_cell" id="header_cell_three"><a href="strays.html">Helping Strays</a></div>
+		<div class="header_cell" id="header_cell_four"><a href="rats.html">Rodents</a></div>
+		<div class="header_cell" id="header_cell_five"><a href="aboutUs.html">About Us</a></div>
 	</div>
-	<img src="rat.png" alt="coolest guy ever"></img>
-	<h2>Rats, Cannibalism, and our Community</h2>
-	<p>In New York City, the common unifier among the rich, the poor, and all other states of being, is the exposure to
-		rats. Also death and taxes. But rats plague our communities, our buildings, and our city. They spread disease, eat
-		our food, and have even killed several cats. One strategy to deal with them would be to do as pirates used to do,
-		specifically by putting a bunch of rats together and having them get hungry and eat each other. These rats get a
-		taste for rat blood and would then hunt down other rats. </p>
-	<h4>Rat Calculator (NYC only)</h4>
-	<p>After an untold amount of research a proper equation to determine rat count near you has been created</p>
-	<p>R=(P*e/D)*S*L/C</p>
-	<ul>
-		<li>R is estimated rat number</li>
-		<li>P is population density per square mile</li>
-		<li>e is eulers constant</li>
-		<li>D is distance in miles from nearest subway</li>
-		<li>S is total square mileage being asked about</li>
-		<li>L is love felt towards rats within area on scale of one(least love) to ten(most love)</li>
-		<li>C is cleanliness within area on scale of one(least clean) to ten(most clean)</li>
-	</ul>
-	<label for="userNumber">Enter P:</label>
-	<input type="number" id="P" required>
-	<label for="userNumber">Enter D:</label>
-	<input type="number" id="D" required>
-	<label for="userNumber">Enter S:</label>
-	<input type="number" id="S" required>
-	<label for="userNumber">Enter L:</label>
-	<input type="number" id="L" required>
-	<label for="userNumber">Enter C:</label>
-	<input type="number" id="C" required>
-	<p id="R">R=?</p>
-	<button type="button" onclick="Calculator()">Submit</button>
-	<div class="footer"><a class="email" href="mailto:surgedile@gmail.com">Contact Us!</a> </div>
+	<img src="images/rat.png" alt="coolest guy ever"></img>
+  <div class="box">
+  <p><big>In New York City,</big>the common unifier among the rich, the poor, and all other states of being, is the exposure to
+    rats. Also death and taxes. But rats plague our communities, our buildings, and our city. They spread disease and eat
+    our food. However, there are many ways to deal with rats in a way that ensures their wellbeing. Catching rats within your home with many of the non-violent traps available in todays society is now more feasible than ever. Once you catch a rat, you can release it into the wild without inflicting any undue suffering upon what is ultimatley an innocent creature. </p>
+    </div>
+  <hr/>
+  <div class="box">
+  <big>Rat Calculator (NYC only)</big>
+  <p>After an untold amount of research a proper equation to determine rat count near you has been created</p>
+  <p>R=(P*e/D)*S*L/C </p>
+  <p>(Note there are some additional behind the scenes variables to provide the most accurate model)</p>
+  </div>
+   <hr/>
+  <div class = "box">
+
+  <ul>
+    <li><big>R is estimated rat number</big></li>
+     <li><strong>e</strong> is eulers constant</li>
+    <li><strong>P</strong> is population density per square mile</li>
+        <label for="userNumber">Enter P:</label>
+  <input type="number" id="P" min="1" max="100000" oninput="numbCheck(P)"required>
+   
+
+    <li><strong>D</strong> is distance in miles from nearest subway</li>
+        <label for="userNumber">Enter D:</label>
+  <input type="number" id="D" min="1" max="100000" required>
+    <li><strong>S</strong> is total square mileage being asked about</li>
+        <label for="userNumber">Enter S:</label>
+  <input type="number" id="S" min="1" max="100000"  required>
+    <li><strong>L</strong> is love felt towards rats within area on scale of one(least love) to ten(most love)</li>
+        <label for="userNumber">Enter L:</label>
+  <input type="number" id="L" min="1" max="10"  required>
+    <li><strong>C</strong> is cleanliness within area on scale of one(least clean) to ten(most clean)</li>
+        <label for="userNumber">Enter C:</label>
+  <input type="number" min="1" max="10" id="C"  required>
+  </ul>
+  </div>
+  <hr/>
+
+
+
+<div class="box">
+  <p id="R"><big>R=?</big></p>
+</div>
+  <button id="yell" type="button" onclick="Calculator()">Calculate</button>
+  <div class="footer">
+    <div><a href="#">Back to Top</a></div>
+    <div>Contact Us:</div>
+    <div>Email: <a href="mailto:surgedile@gmail.com">surgedile@gmail.com</a></div>
+    <div>Phone: <a href="tel:+13479884657">(347) 988-4657</</a></div>
+  </div>
 </body>
 
 </html>

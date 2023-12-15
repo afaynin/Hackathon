@@ -1,16 +1,9 @@
 let page_num;
-
-function add_flipbook_to_scene()
-{
-		let book = create_book(450, 600, getBookContent());
-		document.querySelector(".scene").appendChild(book);
-
-		addEventListener("keypress", (e) => {
-				console.log(e.key);
-				if (e.key === "a") flip_book(book, false)
-				if (e.key === "d") flip_book(book, true)
-		 });
-}
+let key_delay;
+const KEY_DELAY_DURATION = 500;
+//https://afaynin.github.io/Hackathon/
+//https://github.com/Astro0250/GWC_Hackathon23
+//https://github.com/afaynin/Hackathon
 
 // Highest level function - calls all lower level function
 // Height self-explanitory, but note that width is the width of the book OPENED,
@@ -78,7 +71,7 @@ function flip_book(book, flip_forward)
 
 		if (out_of_bounds)
 		{
-				for (let i = 0; i < book.num_pages; i++) setTimeout(() => flip_book(book, !flip_forward), i * 500 / book.num_pages);
+				for (let i = 0; i < book.num_pages; i++) setTimeout(() => flip_book(book, !flip_forward), i * 250 / book.num_pages);
 		}
 		else
 		{
@@ -122,9 +115,39 @@ function getBookContent() {
 
 	for (let image of image_names) {
 		let	page = document.createElement("img");
-		page.src = `images/${image}`;
+		page.src = `../images/${image}`;
 		content.push(page);
 	}
 
 	return content;
+}
+
+function init_key_tracking()
+{
+	key_delay = false;
+	
+	addEventListener("keypress", key_pressed);
+}
+
+function key_pressed(e)
+{
+	if (key_delay) return;
+
+	switch (e.key)
+	{
+		case "a":
+			flip_book(document.querySelector(".book"), false);
+			break;
+			
+		case "d":
+			flip_book(document.querySelector(".book"), true);
+			break;
+			
+		default:
+			return;
+			break;
+	}
+
+	key_delay = true;
+	setTimeout(() => key_delay = false,KEY_DELAY_DURATION)
 }
