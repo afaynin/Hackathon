@@ -122,7 +122,7 @@ function getBookContent() {
 
 	for (let image of image_names) {
 		let	page = document.createElement("img");
-		page.src = `../images/${image}`;
+		page.src = `images/${image}`;
 		content.push(page);
 	}
 
